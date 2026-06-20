@@ -7,12 +7,119 @@
 
 ---
 
-# Contexto do Desafio
+# Introdução ao Desafio
 A rápida expansão dos veículos elétricos já coloca pressão sobre condomínios, prédios corporativos e campus universitários, que ainda não possuem infraestrutura de recarga preparada para lidar com a nova demanda. Sem mecanismos integrados, faltam soluções para organizar sessões por usuário, calcular consumo individual e aplicar regras de rateio justas. Diante desse cenário, surge uma oportunidade estratégica: transformar cada sessão de recarga em dados estruturados, em um modelo de rateio inteligente e em insights acionáveis, criando experiência digital transparente para todos os envolvidos.
 
 ---
 
-# Frente 1
+# Frente 1 – CONTEXTO E PROBLEMA
+
+## O que são Infraestruturas de Recarga Compartilhada?
+Infraestruturas de recarga compartilhada são sistemas de carregamento de veículos elétricos (VEs) projetados para atender múltiplos usuários.  
+
+- Permitem que diferentes motoristas utilizem o mesmo carregador.  
+- Individualizam o consumo de energia.  
+- Facilitam o pagamento automatizado via aplicativos ou plataformas de gestão.  
+
+### Categorias de Uso
+- **Condomínios e edifícios residenciais**  
+  - Vagas rotativas ou dedicadas.  
+  - Consumo medido individualmente e cobrado via conta de luz ou aplicativo.  
+  - Gestão Inteligente (Smart Charging) para equilibrar a carga entre veículos conectados.  
+
+- **Espaços públicos e corporativos**  
+  - Instalação em shoppings, estacionamentos, rodovias e vias públicas.  
+  - Pagamento via cartão ou aplicativo.  
+  - Equipamentos de alta potência, permitindo recarga em minutos.  
+
+## Desafios Enfrentados
+1. **Limitação da capacidade elétrica** – infraestrutura insuficiente para múltiplos veículos.  
+2. **Rateio de custos e cobrança** – necessidade de medir consumo individual e distribuir custos de forma justa.  
+3. **Logística e gestão de vagas** – controle para evitar conflitos e garantir disponibilidade.  
+4. **Manutenção e atualização tecnológica** – manter equipamentos seguros e compatíveis com novas tecnologias.  
+
+## Funcionamento Técnico e Captura de Dados
+O processo de recarga segue protocolos globais (OCPP, IEC 61851, ISO 15118) e envolve cinco etapas:
+
+1. **Conexão Física e Reconhecimento (Handshake)**  
+   - Cabo plugado ao veículo.  
+   - Circuito fechado pelo Control Pilot (CP).  
+   - Definição da corrente máxima permitida.  
+
+2. **Autenticação e Autorização**  
+   - Usuário se identifica via RFID, QR Code ou Plug & Charge.  
+   - Mensagem de validação enviada ao servidor em nuvem.  
+
+3. **Início e Transmissão de Energia**  
+   - Contatores internos acionados.  
+   - Registro de dados iniciais: ID da sessão, usuário, horário e leitura do medidor.  
+
+4. **Monitoramento e Telemetria (Tempo Real)**  
+   - Pacotes de dados enviados periodicamente (MeterValues.req).  
+   - Informações: potência (kW), corrente (A), tensão (V), temperatura e Estado de Carga (SoC).  
+
+5. **Encerramento da Sessão**  
+   - Fluxo interrompido ao atingir 100% ou por comando do usuário.  
+   - Dados finais enviados (StopTransaction.req).  
+
+### Captura de Dados
+- **Via Nuvem (OCPP)** – modem 4G ou Wi-Fi envia dados para software de gestão (CMS).  
+- **Via APIs de Integração** – dados consolidados integrados a ERP, sistemas condominiais ou BI.  
+- **Via Rede Local (Modbus)** – leitura direta por CLP, sem internet externa.  
+
+## Modelos de Negócio em Recarga Compartilhada
+1. **Recarga Gratuita (Subsidiada)**  
+   - Estabelecimento absorve custo da energia.  
+   - Objetivo: atrair clientes e aumentar permanência.  
+   - Tendência: em declínio global.  
+
+2. **Cobrança por Energia (kWh)**  
+   - Usuário paga apenas pela eletricidade consumida.  
+   - Modelo justo e respaldado pela Resolução 1.000 da ANEEL.  
+
+3. **Cobrança por Tempo (minuto)**  
+   - Valor calculado pelo tempo de permanência.  
+   - Ideal para rodovias, estimula rotatividade.  
+   - Desvantagem: prejudica veículos com menor velocidade de carregamento.  
+
+4. **Assinatura Mensal (Planos Fixos)**  
+   - Mensalidade fixa para acesso ilimitado ou franquia de kWh.  
+   - Foco: motoristas de aplicativo, frotas comerciais.  
+   - Modelo consolidado nos EUA e Europa, em expansão no Brasil.  
+
+5. **Rateio Condominial**  
+   - Exclusivo para condomínios residenciais ou corporativos.  
+   - Consumo individual medido e lançado no boleto do usuário.  
+   - Isenta quem não possui veículo elétrico.  
+
+## Análise de Mercado
+O mercado brasileiro de **CMS (Charging Station Management Systems)** e **CPOs (Charge Point Operators)** apresenta diferentes soluções para desafios de limitação elétrica, faturamento e logística de vagas.
+
+### Voltbras
+- **Perfil**: Plataforma SaaS white-label para redes de eletropostos e frotas.  
+- **Soluções**:  
+  - Motor de cobrança automatizado com grupos tarifários.  
+  - Integração com Smart Charging para balanceamento de carga.  
+- **Estratégia**: Foco em software via OCPP, sem hardware próprio.  
+
+### NeoCharge
+- **Perfil**: Integradora de hardware (AC/DC) e software próprio.  
+- **Soluções**:  
+  - Monitoramento em tempo real de vagas.  
+  - Relatórios de consumo individualizável.  
+  - Projetos de infraestrutura elétrica.  
+
+### Elev
+- **Perfil**: Tecnologia em eletromobilidade para recarga urbana e frotas.  
+- **Soluções**:  
+  - Mitigação de ociosidade de vagas com notificações e tarifas excedentes.  
+  - Carteira digital integrada (Pix, cartão de crédito).  
+- **Estratégia**: Foco na jornada digital do motorista e simplificação de microtransações.  
+
+## Conclusão
+Infraestruturas de recarga compartilhada são essenciais para a expansão da mobilidade elétrica no Brasil.  
+Elas enfrentam desafios técnicos e operacionais, mas contam com modelos de negócio diversificados e soluções tecnológicas que tornam a operação viável e escalável.  
+O mercado nacional já apresenta players relevantes que contribuem para consolidar esse ecossistema.
 
 ---
 
@@ -93,13 +200,13 @@ Um fluxo típico de utilização envolve:
 
 Em projetos de mobilidade elétrica, os dados da API podem ser usados para identificar períodos de maior geração solar e direcionar o carregamento dos veículos para esses horários.
 
-## Considerações finais
+## Conclusão
 A combinação entre:
 - Regulamentação da ANEEL  
 - Recursos de comunicação do **GoodWe HCA G2**  
 - Funcionalidades da **API SEMS Portal**  
 
-cria um ambiente favorável para soluções de mobilidade elétrica integradas à geração fotovoltaica.  
+Cria um ambiente favorável para soluções de mobilidade elétrica integradas à geração fotovoltaica.  
 
 Essas tecnologias ampliam o monitoramento, controle e eficiência energética das instalações, contribuindo para o crescimento da infraestrutura de recarga e para a adoção de veículos elétricos no Brasil.
 
@@ -174,3 +281,18 @@ Em fevereiro de 2026, **1.649 municípios brasileiros** já tinham eletropostos 
 ## Conclusão
 O Brasil vive uma fase de **expansão acelerada da mobilidade elétrica**, com crescimento expressivo tanto nas vendas de veículos quanto na infraestrutura de recarga.  
 A tendência aponta para maior interiorização da eletromobilidade, diversificação dos perfis de uso e consolidação de uma rede de recarga cada vez mais rápida e eficiente.
+
+---
+
+# Fontes
+
+## Frente 1
+
+## Frente 2
+
+## Frente 3
+- ASSOCIAÇÃO BRASILEIRA DO VEÍCULO ELÉTRICO. Recarga pública rápida cresce 167% em 12 meses e já atinge 31% dos 21 mil eletropostos da rede. São Paulo: ABVE, 2026. Disponível em: <https://abve.org.br/recarga-publica-rapida-cresce-167-em-12-meses-e-ja-atinge-31-dos-21-mil-eletropostos-da-rede/>.
+
+- ASSOCIAÇÃO BRASILEIRA DO VEÍCULO ELÉTRICO. Eletrificados crescem dez vezes mais do que conjunto do mercado em 2025, com 224 mil veículos vendidos. São Paulo: ABVE, 2026. Disponível em: <https://abve.org.br/eletrificados-crescem-dez-vezes-mais-do-que-conjunto-do-mercado-em-2025-com-224-mil-veiculos-vendidos/>.
+
+- ASSOCIAÇÃO BRASILEIRA DO VEÍCULO ELÉTRICO. Infraestrutura de recarga avança e já está em 25% dos municípios brasileiros. São Paulo: ABVE, 2026. Disponível em: <https://abve.org.br/infraestrutura-de-recarga-avanca-e-ja-esta-em-25-dos-municipios-brasileiros/>.
