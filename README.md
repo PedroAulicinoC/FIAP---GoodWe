@@ -364,6 +364,10 @@ O fluxo de dados na plataforma EV ChargeOps descreve o caminho percorrido pelas 
 
 Plataformas como **Voltbras** e **NeoCharge** já estruturam fluxos semelhantes, emitindo relatórios individualizados e integrando dados diretamente em sistemas de gestão predial.
 
+## Diagrama
+
+![Diagrama EV ChargeOps](DiagramaGoodWe.png)
+
 ## Modelo de Rateio Proposto
 
 A equipe propõe um modelo híbrido de rateio, baseado no consumo real de energia (kWh) com acréscimo de taxa de manutenção proporcional.
