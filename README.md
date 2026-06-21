@@ -393,6 +393,13 @@ O modelo de **rateio condominial** já é utilizado pela **Elev**, que mede o co
 
 # Plano para a Sprint 2
 
+Para a execução da Sprint 02, a equipe dividirá o desenvolvimento do EV ChargeOps em quatro frentes tecnológicas integradas:
+
+1. *Desenvolvimento do Back-end e Integração (API):* Implementação do servidor para consumir os endpoints da API GoodWe SEMS Portal, capturando os dados de telemetria das sessões de recarga (potência, tempo e kWh) em tempo real.
+2. *Persistência de Dados (Banco de Dados):* Estruturação do banco de dados para o armazenamento seguro dos perfis de usuários, registros das transações de recarga e histórico de faturamento para auditoria do condomínio.
+3. *Implementação da Inteligência Artificial:* Desenvolvimento de modelos para automação do balanceamento de carga (Smart Charging) e análise preditiva do consumo energético, além de detecção de anomalias para evitar falhas ou fraudes no sistema.
+4. *Front-end e Dashboards (Interfaces):* Construção das interfaces para o Usuário (visualização de extrato, consumo e status da recarga) e para o Gestor (painel administrativo para controle das vagas, relatórios e automação do rateio).
+
 ---
 
 # Fontes
