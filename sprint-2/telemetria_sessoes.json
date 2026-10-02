@@ -1,0 +1,97 @@
+[
+    {
+        "timestamp": "2026-10-02T15:58:25.559078",
+        "charger_id": "GW-HCA-G2-001",
+        "station": "FIAP - Energy Innovation Lab (Aclima\u00e7\u00e3o L1)",
+        "status": "Charging",
+        "telemetria": {
+            "tensao_v": 223.7,
+            "corrente_a": 30.28,
+            "potencia_kw": 6.77,
+            "temperatura_c": 40.8,
+            "frequencia_hz": 60.0
+        },
+        "sessao": {
+            "session_id": "SES-2026-FIAP-001",
+            "tag_rfid": "RFID-USER-MORADOR-APT42",
+            "tempo_decorrido_minutos": 46,
+            "energia_acumulada_kwh": 2.845
+        }
+    },
+    {
+        "timestamp": "2026-10-02T15:58:26.563591",
+        "charger_id": "GW-HCA-G2-001",
+        "station": "FIAP - Energy Innovation Lab (Aclima\u00e7\u00e3o L1)",
+        "status": "Charging",
+        "telemetria": {
+            "tensao_v": 223.65,
+            "corrente_a": 31.97,
+            "potencia_kw": 7.15,
+            "temperatura_c": 35.5,
+            "frequencia_hz": 60.0
+        },
+        "sessao": {
+            "session_id": "SES-2026-FIAP-001",
+            "tag_rfid": "RFID-USER-MORADOR-APT42",
+            "tempo_decorrido_minutos": 50,
+            "energia_acumulada_kwh": 11.18
+        }
+    },
+    {
+        "timestamp": "2026-10-02T15:58:27.566049",
+        "charger_id": "GW-HCA-G2-001",
+        "station": "FIAP - Energy Innovation Lab (Aclima\u00e7\u00e3o L1)",
+        "status": "Charging",
+        "telemetria": {
+            "tensao_v": 220.16,
+            "corrente_a": 30.99,
+            "potencia_kw": 6.82,
+            "temperatura_c": 41.2,
+            "frequencia_hz": 60.0
+        },
+        "sessao": {
+            "session_id": "SES-2026-FIAP-001",
+            "tag_rfid": "RFID-USER-MORADOR-APT42",
+            "tempo_decorrido_minutos": 33,
+            "energia_acumulada_kwh": 13.329
+        }
+    },
+    {
+        "timestamp": "2026-10-02T15:58:28.567310",
+        "charger_id": "GW-HCA-G2-001",
+        "station": "FIAP - Energy Innovation Lab (Aclima\u00e7\u00e3o L1)",
+        "status": "Charging",
+        "telemetria": {
+            "tensao_v": 221.76,
+            "corrente_a": 30.88,
+            "potencia_kw": 6.85,
+            "temperatura_c": 37.7,
+            "frequencia_hz": 60.0
+        },
+        "sessao": {
+            "session_id": "SES-2026-FIAP-001",
+            "tag_rfid": "RFID-USER-MORADOR-APT42",
+            "tempo_decorrido_minutos": 15,
+            "energia_acumulada_kwh": 8.456
+        }
+    },
+    {
+        "timestamp": "2026-10-02T15:58:29.569022",
+        "charger_id": "GW-HCA-G2-001",
+        "station": "FIAP - Energy Innovation Lab (Aclima\u00e7\u00e3o L1)",
+        "status": "Charging",
+        "telemetria": {
+            "tensao_v": 218.21,
+            "corrente_a": 31.28,
+            "potencia_kw": 6.83,
+            "temperatura_c": 39.9,
+            "frequencia_hz": 60.0
+        },
+        "sessao": {
+            "session_id": "SES-2026-FIAP-001",
+            "tag_rfid": "RFID-USER-MORADOR-APT42",
+            "tempo_decorrido_minutos": 57,
+            "energia_acumulada_kwh": 14.89
+        }
+    }
+]
