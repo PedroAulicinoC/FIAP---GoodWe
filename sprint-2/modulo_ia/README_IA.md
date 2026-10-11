@@ -159,3 +159,9 @@ integracao_ia.py: execução conjunta das análises de anomalias, previsão e Sm
 integrador_goodwe.py: integração entre o motor de rateio e os resultados da IA.
 
 evidencia_integracao_goodwe.json: evidência dos resultados obtidos no teste integrado.
+## 10. Como executar a integração final
+
+Na pasta sprint-2, execute os comandos:
+
+python popular_banco.py
+python modulo_ia/executar_integracao_final.py
