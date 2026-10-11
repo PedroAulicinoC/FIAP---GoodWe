@@ -1,5 +1,13 @@
 
 import json
+import sys
+from pathlib import Path
+
+PASTA_SPRINT2 = Path(__file__).resolve().parent.parent
+
+if str(PASTA_SPRINT2) not in sys.path:
+    sys.path.insert(0, str(PASTA_SPRINT2))
+
 from motor_rateio import processar_rateio_condominio
 from integracao_ia import executar_modulo_ia
 
