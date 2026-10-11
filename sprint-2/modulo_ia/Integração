@@ -1,0 +1,55 @@
+from pathlib import Path
+import sys
+
+PASTA_IA = Path(__file__).resolve().parent
+PASTA_SPRINT2 = PASTA_IA.parent
+
+sys.path.insert(0, str(PASTA_SPRINT2))
+
+from database import Database
+from gerar_faturamento_mensal import carregar_cadastro_unidades
+from integrador_goodwe import executar_sistema_integrado
+
+
+def main():
+    # Utiliza o banco de dados dos colegas
+    db = Database()
+    cadastro = carregar_cadastro_unidades(db)
+
+    if not cadastro:
+        print("Banco sem moradores cadastrados.")
+        print("Execute popular_banco.py antes deste programa.")
+        return
+
+    # JSON localizado na pasta sprint-2
+    caminho_json = PASTA_SPRINT2 / "telemetria_sprint2_consolidada.json"
+
+    resultado = executar_sistema_integrado(
+        caminho_json=str(caminho_json),
+        cadastro_unidades=cadastro,
+        tarifa_kwh=0.85,
+        custo_manutencao=200.00,
+        veiculos={
+            "Veiculo_A": 2.0,
+            "Veiculo_B": 7.0,
+            "Veiculo_C": 7.0
+        },
+        limite_total_kw=11.0
+    )
+
+    print("\n========== GOODWE - INTEGRACAO FINAL ==========")
+
+    for rfid, fatura in resultado["faturas"].items():
+        print(f"\nRFID: {rfid}")
+        print(f"Morador: {fatura['titular']}")
+        print(f"Apartamento: {fatura['apartamento']}")
+        print(f"Consumo: {fatura['consumo_kwh_total']} kWh")
+        print(f"Fatura: R$ {fatura['valor_total_fatura']:.2f}")
+        print(f"Status IA: {fatura['status_analise_ia']}")
+
+    print("\nSessoes que precisam de revisao:")
+    print(resultado["sessoes_em_revisao"])
+
+
+if __name__ == "__main__":
+    main()
