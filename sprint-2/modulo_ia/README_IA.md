@@ -72,7 +72,7 @@ O algoritmo é demonstrativo e não controla carregadores reais.
 - previsao_demanda.py
 - smart_charging.py
 - README_IA.md
--##6. Integração com o sistema de rateio
+-## 6. Integração com o sistema de rateio
 
 O módulo de IA foi integrado ao motor de rateio do projeto EV ChargeOps por meio do arquivo integrador_goodwe.py.
 
@@ -94,7 +94,7 @@ As sessões com anomalias recebem o status REVISAR SESSAO. As demais recebem SEM
 
 A IA não modifica automaticamente os valores das faturas. Os alertas indicam a necessidade de revisão pelo gestor.
 
-##7. Resultado do teste integrado
+## 7. Resultado do teste integrado
 
 O teste foi executado no Google Colab utilizando 24 registros de telemetria simulada, distribuídos em três sessões.
 
@@ -136,7 +136,7 @@ A análise também identificou uma variação brusca de potência nessa sessão.
 
 O resultado completo do teste está registrado no arquivo evidencia_integracao_goodwe.json.
 
-##8. Limitações da integração
+## 8. Limitações da integração
 
 O teste integrado foi realizado no Google Colab com um cadastro provisório de moradores.
 
@@ -150,7 +150,7 @@ O Smart Charging é uma simulação de distribuição de potência, sem comunica
 
 Os alertas não comprovam erros de faturamento e devem ser avaliados antes de qualquer decisão de cobrança.
 
-##9. Arquivos adicionais
+## 9. Arquivos adicionais
 
 executar_ia.py: execução independente do módulo de IA.
 
