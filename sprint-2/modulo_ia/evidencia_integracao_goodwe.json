@@ -1,0 +1,95 @@
+{
+    "faturas": {
+        "RFID-APT-42": {
+            "titular": "Morador de teste",
+            "apartamento": "42",
+            "veiculos_cadastrados": [],
+            "total_sessoes_realizadas": 1,
+            "consumo_kwh_total": 6.84,
+            "tarifa_aplicada_kwh": 0.85,
+            "custo_energia_bruto": 5.82,
+            "taxa_manutencao_rateada": 66.67,
+            "valor_total_fatura": 72.48,
+            "status_analise_ia": "SEM ALERTAS DETECTADOS"
+        },
+        "RFID-APT-105": {
+            "titular": "Morador de teste",
+            "apartamento": "105",
+            "veiculos_cadastrados": [],
+            "total_sessoes_realizadas": 1,
+            "consumo_kwh_total": 1.68,
+            "tarifa_aplicada_kwh": 0.85,
+            "custo_energia_bruto": 1.43,
+            "taxa_manutencao_rateada": 66.67,
+            "valor_total_fatura": 68.1,
+            "status_analise_ia": "SEM ALERTAS DETECTADOS"
+        },
+        "RFID-APT-88": {
+            "titular": "Morador de teste",
+            "apartamento": "88",
+            "veiculos_cadastrados": [],
+            "total_sessoes_realizadas": 1,
+            "consumo_kwh_total": 5.26,
+            "tarifa_aplicada_kwh": 0.85,
+            "custo_energia_bruto": 4.48,
+            "taxa_manutencao_rateada": 66.67,
+            "valor_total_fatura": 71.14,
+            "status_analise_ia": "REVISAR SESSAO"
+        }
+    },
+    "sessoes_em_revisao": [
+        "SES-003-FAULT"
+    ],
+    "resultado_ia": {
+        "registros_analisados": 24,
+        "anomalias": [
+            {
+                "charger_id": "GW-HCA-G2-001",
+                "session_id": "SES-003-FAULT",
+                "tag_rfid": "RFID-APT-88",
+                "alertas": [
+                    "Tensao fora da faixa de teste: 185.0 V",
+                    "Corrente fora da faixa de teste: 44.0 A",
+                    "Potencia fora da faixa de teste: 8.14 kW",
+                    "Temperatura fora da faixa de teste: 58.5 °C",
+                    "Estado reportado pelo carregador: Warning"
+                ]
+            },
+            {
+                "charger_id": "GW-HCA-G2-001",
+                "session_id": "SES-003-FAULT",
+                "tag_rfid": "RFID-APT-88",
+                "alertas": [
+                    "Estado reportado pelo carregador: Fault"
+                ]
+            }
+        ],
+        "anomalias_curva": [
+            {
+                "sessao": "SES-003-FAULT",
+                "tempo_minutos": 40,
+                "potencia_anterior_kw": 6.94,
+                "potencia_atual_kw": 8.14,
+                "variacao_percentual": 17.29,
+                "tipo": "Variacao brusca de potencia"
+            }
+        ],
+        "previsao": {
+            "tempo_minutos": 30,
+            "energia_estimada_kwh": 3.435,
+            "observacao": "Estimativa experimental; nao representa uma previsao validada de demanda futura."
+        },
+        "previsao_ciclos": {
+            "sessoes_utilizadas": 3,
+            "duracao_prevista_minutos": 30,
+            "energia_estimada_kwh": 3.444,
+            "modelo": "Regressão Linear por Ciclos",
+            "observacao": "Estimativa experimental com histórico limitado."
+        },
+        "distribuicao_potencia": {
+            "Veiculo_A": 2.0,
+            "Veiculo_B": 4.5,
+            "Veiculo_C": 4.5
+        }
+    }
+}

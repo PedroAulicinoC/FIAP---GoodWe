@@ -24,6 +24,8 @@ def executar_modulo_ia(caminho_json, veiculos, limite_total_kw):
         if alertas:
             alertas_encontrados.append({
                 "charger_id": registro.get("charger_id"),
+                "session_id": registro.get("sessao", {}).get("session_id"),
+                "tag_rfid": registro.get("sessao", {}).get("tag_rfid"),
                 "alertas": alertas
             })
 
