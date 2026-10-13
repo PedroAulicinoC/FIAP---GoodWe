@@ -226,8 +226,6 @@ O banco possui restrições de unicidade para evitar duplicidade de cadastros, s
 
 Os eventos de auditoria permitem acompanhar operações de ingestão, cadastros e salvamento de faturas. As consultas implementadas podem ser utilizadas pelo motor de rateio e pelo painel web do gestor predial.
 
-> **Observação:** os horários de início e término das sessões simuladas ainda precisam de uma validação final para garantir que representem a duração planejada de cada recarga. Esse ponto deve ser revisado antes de considerar o histórico temporal totalmente validado.
-
 ---
 
 ## 7. Painel Web do Gestor Predial (Front-end)
