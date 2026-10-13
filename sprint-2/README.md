@@ -7,6 +7,8 @@ Enterprise Challenge 2026 — Parceria GoodWe + FIAP (Energy Innovation Lab - Ac
 O EV ChargeOps é uma solução voltada para condomínios e ambientes compartilhados com carregadores de veículos elétricos (modelo GoodWe HCA G2). A plataforma resolve o desafio de medir o consumo individual em kWh, estruturar dados de telemetria das sessões e aplicar um modelo de rateio condominial justo, em conformidade com as diretrizes da Resolução Normativa ANEEL nº 1.000/2021.
 
 ---
+<img width="1876" height="963" alt="image" src="https://github.com/user-attachments/assets/b4e54ca4-deb3-4dfa-9607-230778a95aa9" />
+
 
 ## 2. O Que Foi Desenvolvido na Sprint 2
 
